@@ -324,25 +324,42 @@
       <input type="text" name="entry.516649860" id="place"><br>
       <div id="submitMSG"></div>
       <button type="submit" name="submit">送信</button>
+      <p id="sendingMsg"></p> <!-- ここにメッセージを追加 -->
     </form>
 
     <script>
       function sendData() {
         const form = document.querySelector('form');
         const data = new FormData(form);
+        const submitButton = document.querySelector('button[name="submit"]');
+
+        submitButton.disabled = true;
+
         fetch(form.action, {
           method: 'POST',
           body: data,
         })
           .then(() => {
-            const submitBtn = document.querySelector('button[name="submit"]');
-            submitBtn.innerText = 'ありがとう';
+            const submitMSG = document.getElementById("submitMSG");
+            submitMSG.innerHTML = "送信しました！お待ちください";
           })
           .catch((error) => {
+            submitMSG.innerHTML = "エラーが発生しました"
             console.error('エラーが発生しました', error);
+          })
+          .finally(() => {
+            alert("利用してくれてありがとう！");
+            submitButton.disabled = false;
           });
       }
+      function clickDisplayAlert() {
+        alert("使ってくれてありがとう！君は最高だ！");
+      }
+
+      const submitButton = document.getElementById("submitButton");
+      submitButton.addEventListener("click", clickDisplayAlert);
     </script>
+
     <footer>
       <div class="version-info">Version 1.0.0</div>
       <footer>
