@@ -1,242 +1,283 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>おいしいお店</title>
-    <style>
-body {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  background-color: #F8F8F8;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80");
-  background-size: cover;
-  background-position: center;
-  font-family: Arial, sans-serif;
-}
-      h1 {
-        text-align: center;
-        font-size: 300%;
-        margin-top: 5%;
-        color: #FFFFFF;
-        text-shadow: 2px 2px 4px #000000;
-      }
-      h2 {
-        margin-top: 50px;
-        color: #FFFFFF;
-        text-shadow: 2px 2px 4px #000000;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      li {
-        margin: 20px;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        padding: 20px;
-      }
-      a {
-        text-decoration: none;
-        color: #333333;
-        font-weight: bold;
-      }
-      img {
-        display: block;
-        margin: 0 auto;
-        max-width: 200px;
-        max-height: 200px;
-        border-radius: 10px;
-      }
-      span {
-        font-size: 200%; /* 好きなサイズに変更 */
-      }
-      #region {
-        margin-bottom: 20px;
-      }
-      #region input[type="checkbox"] {
-        display: none;
-      }
-      #region label {
-        background-color: #FFFFFF;
-        padding: 10px 20px;
-        border-radius: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-      #region input[type="checkbox"]:checked + label {
-        background-color: #3366CC;
-        color: #FFFFFF;
-      }
-      .prefecture {
-        display: none;
-      }
-      #all:checked ~ .prefecture {
-        display: block;
-      }
-      #kyushu:checked ~ .kyushu {
-        display: block;
-      }
-      #kantou:checked ~ .kantou {
-        display: block;
-      }
-      /* 他の地方についても同様にスタイルを定義する */
-    </style>
-  </head>
-  <body>
-    <h1>旨いお店に行こう</h1>
-    
-    <!-- 地域チェックボックス -->
-    <div id="region">
-      <input type="checkbox" id="all"checked>
-      <label for="all">すべて</label>
-      <input type="checkbox" id="kantou">
-      <label for="kantou">関東地方</label>
-      <input type="checkbox" id="kyushu">
-      <label for="kyushu">九州・沖縄地方</label>
-      <!-- 他の地方についても同様に定義する -->
 
-      <div class="kantou prefecture">
-        <h2>関東地方</h2>
-        
-        <ul>
-          <li>
-            <a href="https://yumetukushi.github.io/toukyoueki/">
-            <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fCVFNiU5RCVCMSVFNCVCQSVBQ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60">
+<head>
+  <meta charset="UTF-8">
+  <title>おいしいお店</title>
+  <style>
+    body {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      background-color: #F8F8F8;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80");
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 300%;
+      margin-top: 5%;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 4px #000000;
+    }
+
+    h2 {
+      margin-top: 50px;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 4px #000000;
+    }
+
+    .version-info {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      padding: 8px;
+      background-color: #f0f0f0;
+      border-top-left-radius: 8px;
+      color: #666;
+      font-size: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    li {
+      margin: 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: bold;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 10px;
+    }
+
+    span {
+      font-size: 200%;
+      /* 好きなサイズに変更 */
+    }
+
+    #region {
+      margin-bottom: 20px;
+    }
+
+    #region input[type="checkbox"] {
+      display: none;
+    }
+
+    #region label {
+      background-color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    #region input[type="checkbox"]:checked+label {
+      background-color: #3366CC;
+      color: #FFFFFF;
+    }
+
+    .prefecture {
+      display: none;
+    }
+
+    #all:checked~.prefecture {
+      display: block;
+    }
+
+    #kyushu:checked~.kyushu {
+      display: block;
+    }
+
+    #kantou:checked~.kantou {
+      display: block;
+    }
+
+    /* 他の地方についても同様にスタイルを定義する */
+  </style>
+</head>
+
+<body>
+
+  <h1>旨いお店に行こう</h1>
+
+  <!-- 地域チェックボックス -->
+  <div id="region">
+    <input type="checkbox" id="all" checked>
+    <label for="all">すべて</label>
+    <input type="checkbox" id="kantou">
+    <label for="kantou">関東地方</label>
+    <input type="checkbox" id="kyushu">
+    <label for="kyushu">九州・沖縄地方</label>
+    <!-- 他の地方についても同様に定義する -->
+
+    <div class="kantou prefecture">
+      <h2>関東地方</h2>
+
+      <ul>
+        <li>
+          <a href="https://yumetukushi.github.io/toukyoueki/">
+            <img
+              src="https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fCVFNiU5RCVCMSVFNCVCQSVBQ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60">
             <span>東京駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/shinagawa/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/shinagawa/">
             <img src="https://rlx.jp/journal/wp-content/uploads/2019/07/pixta_72892032_M-1024x683.jpg">
             <span>品川駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/shibuyaeki/">
-            <img src="https://www.aeras-group.jp/wp-content/themes/aeras/thumb.php?src=s3://prod-aeras-corporate-site-system-data/wp-content/uploads/2021/09/6_11_1_50843429.jpg&w=550">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/shibuyaeki/">
+            <img
+              src="https://www.aeras-group.jp/wp-content/themes/aeras/thumb.php?src=s3://prod-aeras-corporate-site-system-data/wp-content/uploads/2021/09/6_11_1_50843429.jpg&w=550">
             <span>渋谷駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/shinjukueki/">
-            <img src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_article_images/10486/10486.jpg?1552874934">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/shinjukueki/">
+            <img
+              src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_article_images/10486/10486.jpg?1552874934">
             <span>新宿駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/asakusaeki/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/asakusaeki/">
             <img src="https://cdn-news.asoview.com/production/note/b529b3eb-4046-4510-bd1f-a531a7f1b586.jpg">
             <span>浅草駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/kichijoujieki/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/kichijoujieki/">
             <img src="https://www.sumai-surfin.com/common/image/k/area/321.jpg">
             <span>吉祥寺駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/kokubunjieki/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/kokubunjieki/">
             <img src="https://sp.chintai.net/app/peyasagashi/article/wp-content/uploads/2020/09/kokubunji_640426.jpg">
             <span>国分寺駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/setagayaeki/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/setagayaeki/">
             <img src="https://www.how-ma.com/mag/wp-content/uploads/setagaya.jpg">
             <span>世田谷駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/shimokitazawaeki/">
-            <img src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_area_images/126/126.jpg?1501821776">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/shimokitazawaeki/">
+            <img
+              src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_area_images/126/126.jpg?1501821776">
             <span>下北沢駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/yoyogieki/">
-            <img src="https://www.homes.co.jp/cont/wp-content/uploads/cont/163274/img/1ee723aed5ff5d98bfa512c62bc29d99.jpg">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/yoyogieki/">
+            <img
+              src="https://www.homes.co.jp/cont/wp-content/uploads/cont/163274/img/1ee723aed5ff5d98bfa512c62bc29d99.jpg">
             <span>代々木駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/fuchuueki/">
-            <img src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13005091_4034_1.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/fuchuueki/">
+            <img
+              src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13005091_4034_1.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
             <span>府中駅</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/choufueki/">
-            <img src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13003805_3460_2.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/choufueki/">
+            <img
+              src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13003805_3460_2.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
             <span>調布駅</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/komazawadaigakuekimae/">
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/komazawadaigakuekimae/">
             <img src="https://static-land.sumu-z.jp/images/machi_komazawadaigaku_001.jpg">
             <span>駒沢大学駅前</span>
           </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/Oomiya/">
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/Oomiya/">
             <img src="https://cdn.4travel.jp/img/thumbnails/imk/tips_pict/11/36/80/650x450_11368008.jpg">
             <span>大宮駅</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://yumetukushi.github.io/minamifunabashieki/">
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/minamifunabashieki/">
             <img src="https://myfuna.net/wp-content/uploads/2019/10/vivit15.jpg">
             <span>南船橋駅</span>
           </a>
-          </li>
-        </ul>
+        </li>
+      </ul>
     </div>
-    
-<div class="kyushu prefecture">
-  <h2>九州・沖縄地方</h2>
-  <ul>
-    <li>
-      <a href="https://yumetukushi.github.io/minamifukuokaeki/">
-      <img src="https://palma-fukuoka.net/wp-content/uploads/2016/04/DSC01186.jpg">
-      <span>南福岡駅</span>
-    </a>
-    </li>
-    <li>
-      <a href="https://yumetukushi.github.io/hakata/">
-      <img src="https://raw.githubusercontent.com/yumetukushi/hakata/main/1676190518132%20(1).jpg">
-      <span>博多駅</span>
-    </a>
-    </li>
-    <li>
-      <a href="https://yumetukushi.github.io/tenjineki/">
-      <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/2703/KXL/a935f_0002703936_1.JPG">
-      <span>天神駅</span>
-    </a>
-    </li>
-    <li>
-      <a href="https://yumetukushi.github.io/kashiieki/">
-      <img src="https://img01.suumo.com/front/gazo/bukken/090/N001000/img/05/67720105/67720105_000202.jpg">
-      <span>香椎駅</span>
-    </a>
-    </li>
-    <li>
-      <a href="https://yumetukushi.github.io/shinguuchuuoueki/">
-      <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/1363/KXL/baa6a_0001363932_1.jpg">
-      <span>新宮中央駅</span>
-    </a>
-    </li>
-    <li>
-      <a href="https://yumetukushi.github.io/fukumaeki/">
-      <img src="https://koga-magazine.com/wp-content/uploads/2020/10/masago12.jpg">
-      <span>福間駅</span>
-    </a>
-    </li>
-    <!-- 他の都道府県についても同様に定義する -->
-  </ul>
-</div>
+
+    <div class="kyushu prefecture">
+      <h2>九州・沖縄地方</h2>
+      <ul>
+        <li>
+          <a href="https://yumetukushi.github.io/minamifukuokaeki/">
+            <img src="https://palma-fukuoka.net/wp-content/uploads/2016/04/DSC01186.jpg">
+            <span>南福岡駅</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/hakata/">
+            <img src="https://raw.githubusercontent.com/yumetukushi/hakata/main/1676190518132%20(1).jpg">
+            <span>博多駅</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/tenjineki/">
+            <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/2703/KXL/a935f_0002703936_1.JPG">
+            <span>天神駅</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/kashiieki/">
+            <img src="https://img01.suumo.com/front/gazo/bukken/090/N001000/img/05/67720105/67720105_000202.jpg">
+            <span>香椎駅</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/shinguuchuuoueki/">
+            <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/1363/KXL/baa6a_0001363932_1.jpg">
+            <span>新宮中央駅</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://yumetukushi.github.io/fukumaeki/">
+            <img src="https://koga-magazine.com/wp-content/uploads/2020/10/masago12.jpg">
+            <span>福間駅</span>
+          </a>
+        </li>
+        <!-- 他の都道府県についても同様に定義する -->
+      </ul>
+    </div>
+    <footer>
+      <div class="version-info">Version 1.0.0</div>
+      <footer>
