@@ -344,22 +344,17 @@
             submitMSG.innerHTML = "送信しました！お待ちください";
           })
           .catch((error) => {
-            submitMSG.innerHTML = "エラーが発生しました"
             console.error('エラーが発生しました', error);
           })
           .finally(() => {
-            alert("利用してくれてありがとう！");
+            alert("使ってくれてありがとう！君は最高だ！");
+            submitMSG.innerHTML = "完了";
             submitButton.disabled = false;
           });
       }
-      function clickDisplayAlert() {
-        alert("使ってくれてありがとう！君は最高だ！");
-      }
 
-      const submitButton = document.getElementById("submitButton");
-      submitButton.addEventListener("click", clickDisplayAlert);
     </script>
 
     <footer>
-      <div class="version-info">Version 1.0.1</div>
+      <div class="version-info">Version 1.0.2</div>
       <footer>
