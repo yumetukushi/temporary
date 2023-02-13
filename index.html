@@ -2,6 +2,15 @@
 <html>
 
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTSMH8TN7Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MTSMH8TN7Y');
+</script>
   <meta charset="UTF-8">
   <title>おいしいお店</title>
   <style>
@@ -278,6 +287,11 @@
         <!-- 他の都道府県についても同様に定義する -->
       </ul>
     </div>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLScKj9EsMZymTKmuokvPlVdsqKU0PY0fHQ3MaVFtNRQcUi9Kyw/formResponse" method="POST">
+      <label for="place">気になる場所を聞いてみよう！AIがとっておきのおいしいお店を探してきてくれるよ</label>
+      <input type="text" id="place" name="entry.1234567890">
+      <button type="submit">送信</button>
+    </form>
     <footer>
       <div class="version-info">Version 1.0.0</div>
       <footer>
