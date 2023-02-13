@@ -2,15 +2,15 @@
 <html>
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTSMH8TN7Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTSMH8TN7Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-MTSMH8TN7Y');
-</script>
+    gtag('config', 'G-MTSMH8TN7Y');
+  </script>
   <meta charset="UTF-8">
   <title>おいしいお店</title>
   <style>
@@ -122,6 +122,35 @@
     #kantou:checked~.kantou {
       display: block;
     }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form label {
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+
+    form input[type="text"] {
+      margin-bottom: 0px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input[type="submit"] {
+      padding: 10px;
+      background-color: #008CBA;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+
 
     /* 他の地方についても同様にスタイルを定義する */
   </style>
@@ -287,11 +316,35 @@
         <!-- 他の都道府県についても同様に定義する -->
       </ul>
     </div>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLScKj9EsMZymTKmuokvPlVdsqKU0PY0fHQ3MaVFtNRQcUi9Kyw/formResponse" method="POST">
-      <label for="place">気になる場所を聞いてみよう！AIがとっておきのおいしいお店を探してきてくれるよ</label>
-      <input type="text" id="place" name="entry.1234567890">
-      <button type="submit">送信</button>
+    <form onsubmit="event.preventDefault(); sendData();"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScKj9EsMZymTKmuokvPlVdsqKU0PY0fHQ3MaVFtNRQcUi9Kyw/formResponse"
+      target="_self" method="POST">
+      <label for="place">気になる場所を聞いてみよう！AIがとっておきのおいしいお店を探してきてくれるよ</label><br>
+      <input type="text" name="entry.516649860" id="place"><br>
+      <div id="submitMSG"></div>
+      <button type="submit" name="submit">送信</button>
     </form>
+
+    <script>
+      function sendData() {
+        const form = document.querySelector('form');
+        const data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+        })
+          .then(() => {
+            const submitBtn = document.querySelector('button[name="submit"]');
+            submitBtn.innerText = 'ありがとう';
+          })
+          .catch((error) => {
+            console.error('エラーが発生しました', error);
+          });
+      }
+    </script>
     <footer>
       <div class="version-info">Version 1.0.0</div>
       <footer>
+
+        <div class="version-info">Version 1.0.0</div>
+        <footer>
