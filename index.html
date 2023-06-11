@@ -2,359 +2,394 @@
 <html>
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTSMH8TN7Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTSMH8TN7Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-MTSMH8TN7Y');
-  </script>
-  <meta charset="UTF-8">
-  <title>おいしいお店</title>
-  <style>
-    body {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      background-color: #F8F8F8;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80");
-      background-size: cover;
-      background-position: center;
-      font-family: Arial, sans-serif;
-    }
+        gtag('config', 'G-MTSMH8TN7Y');
+    </script>
+    <meta charset="UTF-8">
+    <title>みんなのミシュラン</title>
+    <style>
+        body {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            background-color: #F8F8F8;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 300%;
-      margin-top: 5%;
-      color: #FFFFFF;
-      text-shadow: 2px 2px 4px #000000;
-    }
+        h1 {
+            text-align: center;
+            font-size: 300%;
+            margin-top: 5%;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px #000000;
+        }
 
-    h2 {
-      margin-top: 50px;
-      color: #FFFFFF;
-      text-shadow: 2px 2px 4px #000000;
-    }
+        h2 {
+            margin-top: 50px;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px #000000;
+        }
 
-    .version-info {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      padding: 8px;
-      background-color: #f0f0f0;
-      border-top-left-radius: 8px;
-      color: #666;
-      font-size: 10px;
-    }
+        .version-info {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border-top-left-radius: 8px;
+            color: #666;
+            font-size: 10px;
+        }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-    li {
-      margin: 20px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
-      padding: 20px;
-    }
+        li {
+            margin: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
 
-    a {
-      text-decoration: none;
-      color: #333333;
-      font-weight: bold;
-    }
+        a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+        }
 
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 200px;
-      max-height: 200px;
-      border-radius: 10px;
-    }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 10px;
+        }
 
-    span {
-      font-size: 200%;
-      /* 好きなサイズに変更 */
-    }
+        span {
+            font-size: 200%;
+            /* 好きなサイズに変更 */
+        }
 
-    #region {
-      margin-bottom: 20px;
-    }
+        #region {
+            margin-bottom: 20px;
+        }
 
-    #region input[type="checkbox"] {
-      display: none;
-    }
+        #region input[type="checkbox"] {
+            display: none;
+        }
 
-    #region label {
-      background-color: #FFFFFF;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-right: 10px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+        #region label {
+            background-color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-    #region input[type="checkbox"]:checked+label {
-      background-color: #3366CC;
-      color: #FFFFFF;
-    }
+        #region input[type="checkbox"]:checked+label {
+            background-color: #3366CC;
+            color: #FFFFFF;
+        }
 
-    .prefecture {
-      display: none;
-    }
+        .prefecture {
+            display: none;
+        }
 
-    #all:checked~.prefecture {
-      display: block;
-    }
+        #all:checked~.prefecture {
+            display: block;
+        }
 
-    #kyushu:checked~.kyushu {
-      display: block;
-    }
+        #kyushu:checked~.kyushu {
+            display: block;
+        }
 
-    #kantou:checked~.kantou {
-      display: block;
-    }
+        #chugoku:checked~.chugoku {
+            display: block;
+        }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        
+        #kantou:checked~.kantou {
+            display: block;
+        }
 
-    form label {
-      margin-bottom: 0px;
-      padding: 0px;
-    }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    form input[type="text"] {
-      margin-bottom: 0px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+        form label {
+            margin-bottom: 0px;
+            padding: 0px;
+        }
 
-    form input[type="submit"] {
-      padding: 10px;
-      background-color: #008CBA;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        form input[type="text"] {
+            margin-bottom: 0px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px;
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
 
 
-    /* 他の地方についても同様にスタイルを定義する */
-  </style>
+        /* 他の地方についても同様にスタイルを定義する */
+    </style>
 </head>
 
 <body>
 
-  <h1>旨いお店に行こう</h1>
+    <h1>みんなのミシュラン</h1>
 
-  <!-- 地域チェックボックス -->
-  <div id="region">
-    <input type="checkbox" id="all" checked>
-    <label for="all">すべて</label>
-    <input type="checkbox" id="kantou">
-    <label for="kantou">関東地方</label>
-    <input type="checkbox" id="kyushu">
-    <label for="kyushu">九州・沖縄地方</label>
-    <!-- 他の地方についても同様に定義する -->
+    <!-- 地域チェックボックス -->
+    <div id="region">
+        <input type="checkbox" id="all" checked>
+        <label for="all">すべて</label>
+        <input type="checkbox" id="kantou">
+        <label for="kantou">関東地方</label>
+        <input type="checkbox" id="chugoku">
+        <label for="chugoku">中国地方</label>
+        <input type="checkbox" id="kyushu">
+        <label for="kyushu">九州・沖縄地方</label>
+        <!-- 他の地方についても同様に定義する -->
 
-    <div class="kantou prefecture">
-      <h2>関東地方</h2>
+        <div class="kantou prefecture">
+            <h2>関東地方</h2>
 
-      <ul>
-        <li>
-          <a href="https://yumetukushi.github.io/toukyoueki/">
-            <img
-              src="https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fCVFNiU5RCVCMSVFNCVCQSVBQ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60">
-            <span>東京駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/shinagawa/">
-            <img src="https://rlx.jp/journal/wp-content/uploads/2019/07/pixta_72892032_M-1024x683.jpg">
-            <span>品川駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/shibuyaeki/">
-            <img
-              src="https://www.aeras-group.jp/wp-content/themes/aeras/thumb.php?src=s3://prod-aeras-corporate-site-system-data/wp-content/uploads/2021/09/6_11_1_50843429.jpg&w=550">
-            <span>渋谷駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/shinjukueki/">
-            <img
-              src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_article_images/10486/10486.jpg?1552874934">
-            <span>新宿駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/asakusaeki/">
-            <img src="https://cdn-news.asoview.com/production/note/b529b3eb-4046-4510-bd1f-a531a7f1b586.jpg">
-            <span>浅草駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/kichijoujieki/">
-            <img src="https://www.sumai-surfin.com/common/image/k/area/321.jpg">
-            <span>吉祥寺駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/kokubunjieki/">
-            <img src="https://sp.chintai.net/app/peyasagashi/article/wp-content/uploads/2020/09/kokubunji_640426.jpg">
-            <span>国分寺駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/setagayaeki/">
-            <img src="https://www.how-ma.com/mag/wp-content/uploads/setagaya.jpg">
-            <span>世田谷駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/shimokitazawaeki/">
-            <img
-              src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_area_images/126/126.jpg?1501821776">
-            <span>下北沢駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/yoyogieki/">
-            <img
-              src="https://www.homes.co.jp/cont/wp-content/uploads/cont/163274/img/1ee723aed5ff5d98bfa512c62bc29d99.jpg">
-            <span>代々木駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/fuchuueki/">
-            <img
-              src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13005091_4034_1.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
-            <span>府中駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/choufueki/">
-            <img
-              src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13003805_3460_2.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
-            <span>調布駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/komazawadaigakuekimae/">
-            <img src="https://static-land.sumu-z.jp/images/machi_komazawadaigaku_001.jpg">
-            <span>駒沢大学駅前</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/Oomiya/">
-            <img src="https://cdn.4travel.jp/img/thumbnails/imk/tips_pict/11/36/80/650x450_11368008.jpg">
-            <span>大宮駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/minamifunabashieki/">
-            <img src="https://myfuna.net/wp-content/uploads/2019/10/vivit15.jpg">
-            <span>南船橋駅</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+            <ul>
+                <li>
+                    <a href="https://yumetukushi.github.io/toukyoueki/">
+                        <img
+                            src="https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fCVFNiU5RCVCMSVFNCVCQSVBQ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60">
+                        <span>東京駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/shinagawa/">
+                        <img src="https://rlx.jp/journal/wp-content/uploads/2019/07/pixta_72892032_M-1024x683.jpg">
+                        <span>品川駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/shibuyaeki/">
+                        <img
+                            src="https://www.aeras-group.jp/wp-content/themes/aeras/thumb.php?src=s3://prod-aeras-corporate-site-system-data/wp-content/uploads/2021/09/6_11_1_50843429.jpg&w=550">
+                        <span>渋谷駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/shinjukueki/">
+                        <img
+                            src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_article_images/10486/10486.jpg?1552874934">
+                        <span>新宿駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/asakusaeki/">
+                        <img
+                            src="https://cdn-news.asoview.com/production/note/b529b3eb-4046-4510-bd1f-a531a7f1b586.jpg">
+                        <span>浅草駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/kichijoujieki/">
+                        <img src="https://www.sumai-surfin.com/common/image/k/area/321.jpg">
+                        <span>吉祥寺駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/kokubunjieki/">
+                        <img
+                            src="https://sp.chintai.net/app/peyasagashi/article/wp-content/uploads/2020/09/kokubunji_640426.jpg">
+                        <span>国分寺駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/setagayaeki/">
+                        <img src="https://www.how-ma.com/mag/wp-content/uploads/setagaya.jpg">
+                        <span>世田谷駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/shimokitazawaeki/">
+                        <img
+                            src="https://image.hldy-cdn.com/c/w=1336,h=826,g=5,a=2,r=auto,f=webp:auto/holiday_area_images/126/126.jpg?1501821776">
+                        <span>下北沢駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/yoyogieki/">
+                        <img
+                            src="https://www.homes.co.jp/cont/wp-content/uploads/cont/163274/img/1ee723aed5ff5d98bfa512c62bc29d99.jpg">
+                        <span>代々木駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/fuchuueki/">
+                        <img
+                            src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13005091_4034_1.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
+                        <span>府中駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/choufueki/">
+                        <img
+                            src="https://www.img-ikyu.com/contents/dg/special/kankou/mapple/13003805_3460_2.jpg?auto=compress,format&fit=crop&w=700&h=450&lossless=0">
+                        <span>調布駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/komazawadaigakuekimae/">
+                        <img src="https://static-land.sumu-z.jp/images/machi_komazawadaigaku_001.jpg">
+                        <span>駒沢大学駅前</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/Oomiya/">
+                        <img src="https://cdn.4travel.jp/img/thumbnails/imk/tips_pict/11/36/80/650x450_11368008.jpg">
+                        <span>大宮駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/minamifunabashieki/">
+                        <img src="https://myfuna.net/wp-content/uploads/2019/10/vivit15.jpg">
+                        <span>南船橋駅</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="kyushu prefecture">
-      <h2>九州・沖縄地方</h2>
-      <ul>
-        <li>
-          <a href="https://yumetukushi.github.io/minamifukuokaeki/">
-            <img src="https://palma-fukuoka.net/wp-content/uploads/2016/04/DSC01186.jpg">
-            <span>南福岡駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/hakata/">
-            <img src="https://raw.githubusercontent.com/yumetukushi/hakata/main/1676190518132%20(1).jpg">
-            <span>博多駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/tenjineki/">
-            <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/2703/KXL/a935f_0002703936_1.JPG">
-            <span>天神駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/kashiieki/">
-            <img src="https://img01.suumo.com/front/gazo/bukken/090/N001000/img/05/67720105/67720105_000202.jpg">
-            <span>香椎駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/shinguuchuuoueki/">
-            <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/1363/KXL/baa6a_0001363932_1.jpg">
-            <span>新宮中央駅</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://yumetukushi.github.io/fukumaeki/">
-            <img src="https://koga-magazine.com/wp-content/uploads/2020/10/masago12.jpg">
-            <span>福間駅</span>
-          </a>
-        </li>
-        <!-- 他の都道府県についても同様に定義する -->
-      </ul>
-    </div>
-    <div style="margin-top: 10px;"></div>
-    <form onsubmit="event.preventDefault(); sendData();"
-      action="https://docs.google.com/forms/d/e/1FAIpQLScKj9EsMZymTKmuokvPlVdsqKU0PY0fHQ3MaVFtNRQcUi9Kyw/formResponse"
-      target="_self" method="POST">
-      <label for="place">気になる場所を聞いてみよう！AIがとっておきのおいしいお店を探してきてくれるよ</label><br>
-      <input type="text" name="entry.516649860" id="place"><br>
-      <div id="submitMSG"></div>
-      <button type="submit" name="submit">送信</button>
-      <p id="sendingMsg"></p> <!-- ここにメッセージを追加 -->
-    </form>
+        <div class="chugoku prefecture">
+            <h2>中国地方</h2>
+            <ul>
+                <li>
+                    <a href="https://yumetukushi.github.io/hiroshimaeki/">
+                        <img src="https://anniversarys-mag.jp/img/p/pixta_74655673_M.jpg?w=730">
+                        <span>広島駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/genbakudome/">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Atomic_Bomb_Dome_and_Motoyaso_River%2C_Hiroshima%2C_Northwest_view_20190417_1.jpg">
+                        <span>原爆ドーム駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/kureeki/">
+                        <img
+                            src="data:image/jpeg;base64,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">
+                        <span>呉駅</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="kyushu prefecture">
+            <h2>九州・沖縄地方</h2>
+            <ul>
+                <li>
+                    <a href="https://yumetukushi.github.io/minamifukuokaeki/">
+                        <img src="https://palma-fukuoka.net/wp-content/uploads/2016/04/DSC01186.jpg">
+                        <span>南福岡駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/hakata/">
+                        <img src="https://raw.githubusercontent.com/yumetukushi/hakata/main/1676190518132%20(1).jpg">
+                        <span>博多駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/tenjineki/">
+                        <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/2703/KXL/a935f_0002703936_1.JPG">
+                        <span>天神駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/kashiieki/">
+                        <img
+                            src="https://img01.suumo.com/front/gazo/bukken/090/N001000/img/05/67720105/67720105_000202.jpg">
+                        <span>香椎駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/shinguuchuuoueki/">
+                        <img src="https://cdn.jalan.jp/jalan/img/3/kuchikomi/1363/KXL/baa6a_0001363932_1.jpg">
+                        <span>新宮中央駅</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yumetukushi.github.io/fukumaeki/">
+                        <img src="https://koga-magazine.com/wp-content/uploads/2020/10/masago12.jpg">
+                        <span>福間駅</span>
+                    </a>
+                </li>
+                <!-- 他の都道府県についても同様に定義する -->
+            </ul>
+        </div>
+        <div style="margin-top: 10px;"></div>
+        <form onsubmit="event.preventDefault(); sendData();"
+            action="https://docs.google.com/forms/d/e/1FAIpQLScKj9EsMZymTKmuokvPlVdsqKU0PY0fHQ3MaVFtNRQcUi9Kyw/formResponse"
+            target="_self" method="POST">
+            <label for="place">気になる場所を聞いてみよう！AIがとっておきのおいしいお店を探してきてくれるよ</label><br>
+            <input type="text" name="entry.516649860" id="place"><br>
+            <div id="submitMSG"></div>
+            <button type="submit" name="submit">送信</button>
+            <p id="sendingMsg"></p> <!-- ここにメッセージを追加 -->
+        </form>
 
-    <script>
-      function sendData() {
-        const form = document.querySelector('form');
-        const data = new FormData(form);
-        const submitButton = document.querySelector('button[name="submit"]');
+        <script>
+            function sendData() {
+                const form = document.querySelector('form');
+                const data = new FormData(form);
+                const submitButton = document.querySelector('button[name="submit"]');
 
-        submitButton.disabled = true;
+                submitButton.disabled = true;
 
-        fetch(form.action, {
-          method: 'POST',
-          body: data,
-        })
-          .then(() => {
-            const submitMSG = document.getElementById("submitMSG");
-            submitMSG.innerHTML = "送信しました！お待ちください";
-          })
-          .catch((error) => {
-            console.error('エラーが発生しました', error);
-          })
-          .finally(() => {
-            alert("使ってくれてありがとう！君は最高だ！");
-            submitMSG.innerHTML = "完了";
-            submitButton.disabled = false;
-          });
-      }
+                fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then(() => {
+                        const submitMSG = document.getElementById("submitMSG");
+                        submitMSG.innerHTML = "送信しました！お待ちください";
+                    })
+                    .catch((error) => {
+                        console.error('エラーが発生しました', error);
+                    })
+                    .finally(() => {
+                        alert("使ってくれてありがとう！君は最高だ！");
+                        submitMSG.innerHTML = "完了";
+                        submitButton.disabled = false;
+                    });
+            }
 
-    </script>
+        </script>
 
-    <footer>
-      <div class="version-info">Version 1.0.2</div>
-      <footer>
+        <footer>
+            <div class="version-info">Version 1.0.2</div>
+            <footer>
