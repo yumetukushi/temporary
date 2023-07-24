@@ -123,6 +123,9 @@
             display: block;
         }
 
+        #kinki:checked~.kinki {
+            display: block;
+        }
         
         #kantou:checked~.kantou {
             display: block;
@@ -171,6 +174,8 @@
         <label for="all">すべて</label>
         <input type="checkbox" id="kantou">
         <label for="kantou">関東地方</label>
+        <input type="checkbox" id="kinki">
+        <label for="chugoku">近畿地方</label>
         <input type="checkbox" id="chugoku">
         <label for="chugoku">中国地方</label>
         <input type="checkbox" id="kyushu">
@@ -282,7 +287,18 @@
                 </li>
             </ul>
         </div>
-
+        <div class="kinki prefecture">
+            <h2>近畿地方</h2>
+            <ul>
+                <li>
+                    <a href="https://yumetukushi.github.io/sinoosaka/">
+                        <img src="https://www.ishikawa-shigyo.com/lsc/lsc-upfile/information/05/34/534_d004_org.png?1500623236">
+                        <span>新大阪駅</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
         <div class="chugoku prefecture">
             <h2>中国地方</h2>
             <ul>
